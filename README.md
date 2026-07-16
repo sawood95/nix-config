@@ -82,11 +82,11 @@ sudo nixos-rebuild switch --flake .#verstappen
   };
   ```
 
-- **Multi-monitor xrandr layout**: bashbunni's i3 config hardcodes her
-  laptop + external monitor outputs/scaling. That's hardware-specific, so
-  `home/swood/i3/config` just has a comment where to add your own
-  `exec_always xrandr ...` line — run `xrandr --listmonitors` first to get
-  output names.
+- **Multi-monitor xrandr layout**: `home/swood/i3/config` sets up
+  `HDMI-A-2` as primary (4K@120Hz) with `HDMI-A-1` (2560x1440@60Hz, rotated
+  left so its bottom edge faces right) to its right. Output names are
+  driver-specific — if you're on different hardware, re-check them with
+  `xrandr --listmonitors` and update the `exec_always xrandr ...` line.
 
 - **Doom Emacs, sway/swayfx, polybar, waybar**: not carried over — you
   picked i3 + neovim only. `modules/desktop-i3.nix` is where you'd add
